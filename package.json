@@ -1,0 +1,22 @@
+{
+  "name": "dispute",
+  "version": "0.0.1",
+  "description": "Handles disputes for bitbargains.online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DynamicTeapots/Dispute.git"
+  },
+  "author": "julianknodt",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/DynamicTeapots/Dispute/issues"
+  },
+  "homepage": "https://github.com/DynamicTeapots/Dispute#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
