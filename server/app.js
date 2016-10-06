@@ -1,7 +1,12 @@
-var express = require('express');
-var router = require('./router');
+const express = require('express');
+const router = require('./router');
+const bp = require('body-parser');
+const morgan = require('morgan');
 
-var app = express();
+const app = express();
+//Server accepts json stringified things.
+app.use(bp.json())
+app.use(morgan('dev'));
 
 app.use('/', router);
 

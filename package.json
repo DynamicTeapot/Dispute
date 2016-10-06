@@ -4,6 +4,7 @@
   "description": "Handles disputes for bitbargains.online",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,8 @@
     "express": "^4.14.0",
     "knex": "^0.12.2",
     "morgan": "^1.7.0",
-    "pg": "^6.1.0"
+    "nodemon": "^1.10.2",
+    "pg": "^6.1.0",
+    "request": "^2.75.0"
   }
 }

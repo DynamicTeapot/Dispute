@@ -32,7 +32,8 @@ module.exports = {
       } else {
         r.hincrby(req.params.id.toString(), 'total', 1, (error, response) => {
           if (response === 5){
-            res.json(response);
+            console.log(response);
+            res.send(response);
             pg.resolveDispute(req.params.id.toString(), reply);
             r.hdel(req.params.id.toString());
           } else {
@@ -43,6 +44,7 @@ module.exports = {
     });
   },
   getDispute: (req, res) => {
+    //Gets random id of dispute
     r.keys('*', (err, reply) => {
       if(err) {
         res.json(err);

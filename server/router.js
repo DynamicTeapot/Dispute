@@ -4,7 +4,6 @@ disputeController.init();
 
 router
   .get('/dispute', disputeController.getDispute)
-//   .post('/createDispute')
-//   .post('/dispute/:id/:polarity')
+  .post('/dispute/:id/:polarity', disputeController.updateDispute);
 
 module.exports = router;

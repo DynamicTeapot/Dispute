@@ -25,9 +25,9 @@ module.exports = {
     },
     resolveDispute(id, polarity) {
       if(polarity > 0) {
-        return db('transactions').where('id', id).update({'order_status', 'buyer won'});
+        return db('transactions').where('id', id).update({'order_status': 'buyer won'});
       } else {
-        return db('transactions').where('id', id).update({'order_status', 'seller won'});
+        return db('transactions').where('id', id).update({'order_status': 'seller won'});
       };
     }
   }
