@@ -25,16 +25,18 @@ const updateDisputes = () => {
 
 module.exports = {
   updateDispute: (req, res) => {
+    //Polarity should be a boolean
     r.hincrby(req.params.id.toString(), 'voteCount', Number(req.params.polarity), (err, reply) => {
       if(err){
         res.send(err)
       } else {
         r.hincrby(req.params.id.toString(), 'total', 1, (error, response) => {
-          if (reply === 5){
+          if (response === 5){
             res.json(response);
+            pg.resolveDispute(req.params.id.toString(), reply);
+            r.hdel(req.params.id.toString());
           } else {
             res.sendStatus(200);
-            r.hdel(req.params.id.toString());
           }
         });
       };

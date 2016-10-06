@@ -22,6 +22,13 @@ module.exports = {
     // resolves promise by returning the id of the first newly created record
     updateTransaction(id, props) {
       return db('transactions').where('id', id).update(props);
+    },
+    resolveDispute(id, polarity) {
+      if(polarity > 0) {
+        return db('transactions').where('id', id).update({'order_status', 'buyer won'});
+      } else {
+        return db('transactions').where('id', id).update({'order_status', 'seller won'});
+      };
     }
   }
 };
